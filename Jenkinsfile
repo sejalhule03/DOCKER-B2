@@ -12,7 +12,7 @@ pipeline{
     }
     }
 
-    stage('#3.stop all old COntainers'){
+    stage('#3.stop all Old Containers'){
       steps{
         bat 'docker stop mycont || exit 0'
         bat 'docker rm mycont ||exit 0'
@@ -20,7 +20,7 @@ pipeline{
     }
     stage('#4.Run the Image - Containerise'){
       steps{
-        bat 'docker run -d -p 4000:80 --name mycont mywebsite'
+        bat 'docker run -d -p 4001:80 --name mycont mywebsite'
       }
     }
   }
