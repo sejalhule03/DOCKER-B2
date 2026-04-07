@@ -8,7 +8,7 @@ pipeline{
     }
     stage('#2.Build the Image'){
       steps{
-        bat 'docker build -t mywebsite .'
+        bat 'docker build -t myweb .'
     }
     }
 
@@ -20,7 +20,7 @@ pipeline{
     }
     stage('#4.Run the Image - Containerise'){
       steps{
-        bat 'docker run -d -p 4001:80 --name mycont mywebsite'
+        bat 'docker run -d -p 4001:80 --name mycont myweb'
       }
     }
   }
