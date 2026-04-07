@@ -3,13 +3,13 @@ pipeline{
   stages{
     stage('#1.Checkout'){
       steps{
-        git url:https://github.com/sejalhule03/DOCKER-B2.git', branch: 'main'
+        git url:'https://github.com/sejalhule03/DOCKER-B2.git', branch: 'main'
       }
     }
 
      stage('#2.Build the Image'){
       steps{
-        bat 'docker build -t myweb .'
+        bat 'docker build -t mywebsite .'
       }
     }
 
@@ -22,7 +22,7 @@ pipeline{
     
     stage('#4.Run the Image - Containeriaze'){
       steps{
-        bat 'docker run -d -p 4001:80 --name mycont myweb'
+        bat 'docker run -d -p 4001:80 --name mycont mywebsite'
       }
     }
   }
